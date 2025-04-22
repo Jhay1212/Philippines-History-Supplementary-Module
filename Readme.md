@@ -6,6 +6,8 @@ A comprehensive and interactive online module for students to learn about the hi
 Create a database named kasaysayan
 The php db_connection.php will handle the connection as long the database name is correct 
 
+You must have 'notosans' font in order to render Baybayin text
+
 If your using XAMPP you can import the table for ease of use
 
 ## Features
