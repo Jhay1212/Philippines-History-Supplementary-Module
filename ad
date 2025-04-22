@@ -1,0 +1,558 @@
+[33mcommit 6a0ffe0facf08f4a5e6d63ae99c6bc79d3603967[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Jhay12 <jhayjane78@gmail.com>
+Date:   Sat Oct 5 13:43:02 2024 +0800
+
+    to save things fixing the back end, the bookmar is cooked the notes is note still raw, the UI is kinda mid because it is not updated
+
+[1mdiff --git a/BOOKMARK/bookmark-css.css b/BOOKMARK/bookmark-css.css[m
+[1mindex d3dbacd..491c3d0 100644[m
+[1m--- a/BOOKMARK/bookmark-css.css[m
+[1m+++ b/BOOKMARK/bookmark-css.css[m
+[36m@@ -6,7 +6,7 @@[m
+ [m
+ body {[m
+     font-family: 'Poppins', sans-serif;[m
+[31m-    background: linear-gradient(135deg, #f8f9fa, #e2dece);[m
+[32m+[m[32m    background-image: url('../PICS/bg1-login1.png');[m
+     color: #343a40;[m
+     height: 100vh;[m
+     display: flex;[m
+[1mdiff --git a/BOOKMARK/bookmark1.php b/BOOKMARK/bookmark1.php[m
+[1mindex 0295841..8ce5d91 100644[m
+[1m--- a/BOOKMARK/bookmark1.php[m
+[1m+++ b/BOOKMARK/bookmark1.php[m
+[36m@@ -49,7 +49,7 @@[m [m$result = $conn->query($sql);[m
+     <!-- User Info Section -->[m
+     <div class="user-info">[m
+         <img src="../PICS/user.jpg" alt="User Icon" class="user-icon">[m
+[31m-        <span class="username">John Doe</span>[m
+[32m+[m[32m        <span class="username"><?php echo $_SESSION['username']  ?></span>[m
+     </div>[m
+ [m
+     <a href="../HOME1/default.php"><i class="fas fa-home"></i> Home</a>[m
+[1mdiff --git a/GAMES/game1-css.css b/GAMES/game1-css.css[m
+[1mindex d47bd39..1d28ce3 100644[m
+[1m--- a/GAMES/game1-css.css[m
+[1m+++ b/GAMES/game1-css.css[m
+[36m@@ -7,7 +7,7 @@[m
+ [m
+ body {[m
+     font-family: 'Poppins', sans-serif;[m
+[31m-    background: linear-gradient(135deg, #f8f9fa, #e2dece);[m
+[32m+[m[32m    background-image: url('../PICS/bg1-login1.png');[m
+     color: #343a40;[m
+     height: 100vh;[m
+     display: flex;[m
+[36m@@ -231,7 +231,7 @@[m [mbody {[m
+ [m
+ .option-btn {[m
+     padding: 15px;[m
+[31m-    background-color: #3498db;[m
+[32m+[m[32m    background-color: #996515;[m
+     color: #fff;[m
+     border: none;[m
+     border-radius: 5px;[m
+[36m@@ -242,7 +242,7 @@[m [mbody {[m
+ }[m
+ [m
+ .option-btn:hover {[m
+[31m-    background-color: #2980b9;[m
+[32m+[m[32m    background-color: #cca809;[m
+     transform: scale(1.05);[m
+ }[m
+ [m
+[36m@@ -255,10 +255,10 @@[m [mbody {[m
+ }[m
+ [m
+ /* Next and Exit Buttons */[m
+[31m-.next-btn, .exit-btn {[m
+[31m-    padding: 15px 30px;[m
+[31m-    margin: 10px;[m
+[31m-    background-color: #2ecc71;[m
+[32m+[m[32m.next-btn {[m
+[32m+[m[32m    padding: 10px 30px;[m
+[32m+[m[32m    margin: 10px 10px;[m
+[32m+[m[32m    background-color: #2ecc2e;[m
+     color: #fff;[m
+     border: none;[m
+     border-radius: 5px;[m
+[36m@@ -269,8 +269,27 @@[m [mbody {[m
+     animation: bounceIn 0.8s ease-in-out forwards;[m
+ }[m
+ [m
+[31m-.next-btn:hover, .exit-btn:hover {[m
+[31m-    background-color: #27ae60;[m
+[32m+[m[32m.exit-btn {[m
+[32m+[m[32m    padding: 5px 30px;[m
+[32m+[m[32m    margin: 5px;[m
+[32m+[m[32m    background-color: #cc2e2e;[m
+[32m+[m[32m    color: #fff;[m
+[32m+[m[32m    border: none;[m
+[32m+[m[32m    border-radius: 5px;[m
+[32m+[m[32m    font-size: 1.2rem;[m
+[32m+[m[32m    cursor: pointer;[m
+[32m+[m[32m    transition: background-color 0.3s ease, transform 0.2s ease;[m
+[32m+[m[32m    visibility: hidden; /* Hidden until correct answer is chosen */[m
+[32m+[m[32m    animation: bounceIn 0.8s ease-in-out forwards;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.next-btn:hover {[m
+[32m+[m[32m    background-color: #45cc45;[m
+[32m+[m[32m    transform: scale(1.05);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.exit-btn:hover {[m
+[32m+[m[32m    background-color: #d65d63;[m
+     transform: scale(1.05);[m
+ }[m
+ [m
+[1mdiff --git a/GAMES/game1.php b/GAMES/game1.php[m
+[1mindex 5b2ee05..b00ee94 100644[m
+[1m--- a/GAMES/game1.php[m
+[1m+++ b/GAMES/game1.php[m
+[36m@@ -21,7 +21,7 @@[m
+ [m
+         <a href="../HOME1/default.php"><i class="fas fa-home"></i> Home</a>[m
+         <a href="../BOOKMARK/bookmark1.php"><i class="fas fa-bookmark"></i> Bookmark</a>[m
+[31m-        <a href="../GAMES/games.php"><i class="fas fa-gamepad"></i> Games</a>[m
+[32m+[m[32m        <a href="../GAMES/games.php"><i class="fas fa-gamepad"></i> Games</a>[m
+         <a href="../NOTES/notes-box.php"><i class="fas fa-sticky-note"></i> Notes</a>[m
+         <a href="../GALLERY/gallery.php"><i class="fas fa-image"></i> Gallery</a>[m
+         <a href="../QUIZ1/quiz1.php"><i class="fas fa-question-circle"></i> Quiz</a>[m
+[1mdiff --git a/GAMES/game2-css.css b/GAMES/game2-css.css[m
+[1mindex a02c306..f0b926f 100644[m
+[1m--- a/GAMES/game2-css.css[m
+[1m+++ b/GAMES/game2-css.css[m
+[36m@@ -8,7 +8,7 @@[m
+ [m
+ body {[m
+     font-family: 'Poppins', sans-serif;[m
+[31m-    background: linear-gradient(135deg, #f8f9fa, #e2dece);[m
+[32m+[m[32m    background-image: url('../PICS/bg1-login1.png');[m
+     color: #343a40;[m
+     height: 100vh;[m
+     display: flex;[m
+[36m@@ -165,7 +165,7 @@[m [mbody {[m
+     margin-left: 120px;[m
+     background-image: url('../PICS/QUIZBG.jpg');[m
+     background-size: 100%;[m
+[31m-    padding: 20px;[m
+[32m+[m[32m    padding: 90px;[m
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);[m
+     border-radius: 10px;[m
+     width: 80%;[m
+[36m@@ -212,7 +212,7 @@[m [mh1 {[m
+     margin: 0 10px;[m
+     border: none;[m
+     border-radius: 5px;[m
+[31m-    background-color: #4CAF50;[m
+[32m+[m[32m    background-color: #996515;[m
+     color: white;[m
+     font-size: 1rem;[m
+     cursor: pointer;[m
+[36m@@ -224,7 +224,7 @@[m [mh1 {[m
+ }[m
+ [m
+ .btn:hover {[m
+[31m-    background-color: #45a049;[m
+[32m+[m[32m    background-color: #cfae18;[m
+ }[m
+ [m
+ .score-container {[m
+[36m@@ -273,9 +273,9 @@[m [mh1 {[m
+ [m
+ .end-buttons .btn {[m
+     margin: 0 10px;[m
+[31m-    background-color: #007BFF;[m
+[32m+[m[32m    background-color: #996515;[m
+ }[m
+ [m
+ .end-buttons .btn:hover {[m
+[31m-    background-color: #0056b3;[m
+[32m+[m[32m    background-color: #cfae18;[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/GAMES/game2-js.js b/GAMES/game2-js.js[m
+[1mindex 4d61575..d5e751a 100644[m
+[1m--- a/GAMES/game2-js.js[m
+[1m+++ b/GAMES/game2-js.js[m
+[36m@@ -1,126 +1,11 @@[m
+ // Questions Array[m
+ const questions = [[m
+[31m-    {[m
+[31m-        "question": "The Philippines was named after King Philip II of Spain.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The Philippines gained independence from Spain in 1896.",[m
+[31m-        "answer": false[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "Jose Rizal was executed by the Spanish government for sedition in 1896.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "Emilio Aguinaldo was the first President of the Philippines.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "Manila is the capital city of the Philippines.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The Philippines was under American colonial rule for over 50 years.",[m
+[31m-        "answer": false[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The Tydings–McDuffie Act provided the Philippines with independence from the United States in 1934.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "Luzon is the largest island in the Philippines.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The Philippine Revolution against Spain began in 1898.",[m
+[31m-        "answer": false[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The People Power Revolution in 1986 led to the ousting of President Ferdinand Marcos.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The Philippine-American War lasted from 1899 to 1902.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The Katipunan was a peaceful movement against Spanish colonization.",[m
+[31m-        "answer": false[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The first Philippine Republic was established in Malolos, Bulacan.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The Spanish language is still the official language of the Philippines.",[m
+[31m-        "answer": false[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The Battle of Manila Bay occurred during the Spanish-American War.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "Manuel L. Quezon was the first president of the Third Philippine Republic.",[m
+[31m-        "answer": false[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The Japanese occupation of the Philippines lasted from 1942 to 1945.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The Treaty of Paris in 1898 ended the Spanish-American War and ceded the Philippines to the United States.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "Corazon Aquino was the first female president of the Philippines.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The Bataan Death March occurred during World War I.",[m
+[31m-        "answer": false[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The University of the Philippines was founded in 1908.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "Andrés Bonifacio is considered the Father of the Philippine Revolution.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The Marcos regime declared Martial Law in 1972.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The Philippines became a member of the United Nations in 1945.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The 1935 Constitution was the first constitution of the Philippines.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The Mactan Battle in 1521 was between Ferdinand Magellan and Lapu-Lapu.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "Manila was declared an open city during World War II to prevent destruction.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The Malolos Constitution was the first constitution written for the Philippines.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "The first Mass in the Philippines was held on March 31, 1521, on Limasawa Island.",[m
+[31m-        "answer": true[m
+[31m-    },[m
+[31m-    {[m
+[31m-        "question": "Diosdado Macapagal is known for moving the Philippines' Independence Day from July 4 to June 12.",[m
+[31m-        "answer": true[m
+[31m-    }[m
+[31m-][m
+[32m+[m[32m    { question: "The Earth is flat.", answer: false },[m
+[32m+[m[32m    { question: "The Great Wall of China is visible from space.", answer: false },[m
+[32m+[m[32m    { question: "There are seven continents on Earth.", answer: true },[m
+[32m+[m[32m    { question: "Lightning never strikes the same place twice.", answer: false },[m
+[32m+[m[32m    { question: "Water boils at 100°C.", answer: true }[m
+[32m+[m[32m];[m
+ [m
+ // Variables to store current question and score[m
+ let currentQuestionIndex = 0;[m
+[1mdiff --git a/GAMES/games-css.css b/GAMES/games-css.css[m
+[1mindex aacb21f..bb817c6 100644[m
+[1m--- a/GAMES/games-css.css[m
+[1m+++ b/GAMES/games-css.css[m
+[36m@@ -7,7 +7,7 @@[m
+ [m
+ body {[m
+     font-family: 'Poppins', sans-serif;[m
+[31m-    background: linear-gradient(135deg, #f8f9fa, #e2dece);[m
+[32m+[m[32m    background-image: url('../PICS/bg1-login1.png');[m
+     color: #343a40;[m
+     height: 100vh;[m
+     display: flex;[m
+[36m@@ -167,7 +167,7 @@[m [mbody {[m
+     text-align: center;[m
+     padding: 40px;[m
+     margin-top: 50px;[m
+[31m-    margin-left: 170px;[m
+[32m+[m[32m    margin-left: 250px;[m
+ }[m
+ [m
+ .main-content h1 {[m
+[36m@@ -183,11 +183,11 @@[m [mbody {[m
+ /* Game Container */[m
+ .game-container {[m
+     display: grid;[m
+[31m-    grid-template-columns: repeat(3, 1fr); /* 3 columns layout */[m
+[31m-    gap: 20px;[m
+[31m-    margin: 40px 0;[m
+[31m-    width: 80%;[m
+[31m-    max-width: 1200px;[m
+[32m+[m[32m    grid-template-columns: repeat(4, 1fr); /* 3 columns layout */[m
+[32m+[m[32m    gap: 30px;[m
+[32m+[m[32m    margin: 40px 30px;[m
+[32m+[m[32m    width: 100%;[m
+[32m+[m[32m    max-width: 1000px;[m
+ }[m
+ [m
+ /* Game Card */[m
+[1mdiff --git a/GAMES/games.php b/GAMES/games.php[m
+[1mindex 60f2407..734012c 100644[m
+[1m--- a/GAMES/games.php[m
+[1m+++ b/GAMES/games.php[m
+[36m@@ -20,7 +20,7 @@[m
+     </div>[m
+ [m
+     <a href="../HOME1/default.php"><i class="fas fa-home"></i> Home</a>[m
+[31m-    <a href="../BOOKMARK/bookmark1.php"><i class="fas fa-bookmark"></i> Bookmark</a>[m
+[32m+[m[32m    <a href="../BOOKMARK/bookmark1.phpl"><i class="fas fa-bookmark"></i> Bookmark</a>[m
+     <a href="../GAMES/games.php"><i class="fas fa-gamepad"></i> Games</a>[m
+     <a href="../NOTES/notes-box.php"><i class="fas fa-sticky-note"></i> Notes</a>[m
+     <a href="../GALLERY/gallery.php"><i class="fas fa-image"></i> Gallery</a>[m
+[36m@@ -65,31 +65,19 @@[m
+                 <div class="game-title">TRUE or FALSE</div>[m
+             </div>[m
+ [m
+[31m-            <div class="game-card" onclick="location.href='../QUEST/quest.php';">[m
+[32m+[m[32m            <div class="game-card" onclick="location.href='#';">[m
+                 <img src="../PICS/GAMES PICS/3.png" alt="Game 3">[m
+                 <div class="game-title">HISTORY IN ORDER</div>[m
+             </div>[m
+ [m
+             <div class="game-card" onclick="location.href='../BAYBAYIN/baybayin.php';">[m
+[31m-                <img src="https://via.placeholder.com/600x400" alt="Game 4">[m
+[32m+[m[32m                <img src="../PICS/GAMES PICS/4.jpg" alt="Game 4">[m
+                 <div class="game-title">Baybayin Translator</div>[m
+             </div>[m
+ [m
+[31m-            <div class="game-card" onclick="location.href='../CHATBOT/chatbot.php';">[m
+[31m-                <img src="https://via.placeholder.com/600x400" alt="Game 5">[m
+[31m-                <div class="game-title">Chatbot</div>[m
+[31m-            </div>[m
+[31m-            [m
+[31m-            [m
+[31m-            <div class="game-card" onclick="location.href='../TIMELINE/timeline.php';">[m
+[31m-                <img src="https://via.placeholder.com/600x400" alt="Game 5">[m
+[31m-                <div class="game-title">Timeline</div>[m
+[31m-            </div>[m
+         </div>[m
+     </div>[m
+ [m
+[31m-    </div>[m
+[31m-[m
+     <!-- JavaScript -->[m
+     <script src="../HOME1/home-js.js"></script>[m
+ </body>[m
+[1mdiff --git a/HOME1/asda.php b/HOME1/asda.php[m
+[1mindex 20b7517..a549aa2 100644[m
+[1m--- a/HOME1/asda.php[m
+[1m+++ b/HOME1/asda.php[m
+[36m@@ -1,4 +1,4 @@[m
+[31m-<?php[m
+[32m+[m[32m<!-- <?php[m
+ include_once ('./save_bookmark.php');[m
+ include_once('../NOTES/save_notes.php');[m
+ [m
+[36m@@ -1067,4 +1067,4 @@[m [mfunction setCookie(cname, cvalue, cdate) {[m
+ [m
+ </script>[m
+ </body>[m
+[31m-</html>[m
+\ No newline at end of file[m
+[32m+[m[32m</html> -->[m
+\ No newline at end of file[m
+[1mdiff --git a/HOME1/home-css.css b/HOME1/home-css.css[m
+[1mindex 6211b75..d17cb07 100644[m
+[1m--- a/HOME1/home-css.css[m
+[1m+++ b/HOME1/home-css.css[m
+[36m@@ -7,7 +7,8 @@[m
+ [m
+ body {[m
+     font-family: 'Poppins', sans-serif;[m
+[31m-    background: url('../PICS/bglp1.jpg');[m
+[32m+[m[32m    background-image: url('../PICS/bg1-login1.png');[m
+[32m+[m[32m    background-size: 100%;[m
+     color: #343a40;[m
+     height: 100vh;[m
+     display: flex;[m
+[36m@@ -141,7 +142,7 @@[m [mbody {[m
+ .info-icon {[m
+     font-size: 1.5rem;[m
+     color: #ffffff;[m
+[31m-    margin-left: 20px;[m
+[32m+[m[32m    margin-left: 25px;[m
+     text-decoration: none;[m
+ }[m
+ [m
+[36m@@ -158,7 +159,7 @@[m [mbody {[m
+     justify-content: center;[m
+     align-items: center;[m
+     text-align: center;[m
+[31m-    padding: 40px;[m
+[32m+[m[32m    padding: 20px;[m
+ }[m
+ [m
+ .main-content h1 {[m
+[36m@@ -188,7 +189,7 @@[m [mbody {[m
+ [m
+ /* Back button styles */[m
+ .content button {[m
+[31m-    background-color: #007bff; /* Primary button color */[m
+[32m+[m[32m    background-color: #996515; /* Primary button color */[m
+     color: #ffffff; /* Button text color */[m
+     border: none;[m
+     padding: 8px 15px;[m
+[36m@@ -219,13 +220,13 @@[m [mbody {[m
+ }[m
+ [m
+ .back-btn:hover {[m
+[31m-    background-color: #4500b5;[m
+[32m+[m[32m    background-color: #807f83;[m
+     transform: scale(1.1);[m
+ }[m
+ [m
+ /* Button hover effect */[m
+ .content button:hover {[m
+[31m-    background-color: #0056b3; /* Darker shade on hover */[m
+[32m+[m[32m    background-color: #4a4c4e; /* Darker shade on hover */[m
+ }[m
+ [m
+ /* Hidden class */[m
+[36m@@ -370,7 +371,8 @@[m [mmain {[m
+ }[m
+ [m
+ .content-section h2 {[m
+[31m-    font-size: 60px;[m
+[32m+[m[32m    text-align: left;[m
+[32m+[m[32m    font-size: 50px;[m
+     color: #333;[m
+ 	margin-bottom:40px;[m
+ }[m
+[36m@@ -556,6 +558,7 @@[m [mmain {[m
+     display: block; /* Show audio element when checked */[m
+ }[m
+ [m
+[32m+[m[32m/* Sidebar styles */[m
+ .sidebar2 {[m
+     height: 100%;[m
+     width: 0;[m
+[36m@@ -593,4 +596,16 @@[m [mmain {[m
+     cursor: pointer;[m
+     color: #111;[m
+   }[m
+[31m-  [m
+\ No newline at end of file[m
+[32m+[m[41m  [m
+[32m+[m[32m  body.active .icon {[m
+[32m+[m[32m    color: #fff;[m
+[32m+[m[32m  }[m
+[32m+[m[41m  [m
+[32m+[m[32m  body.active .sidebar2 {[m
+[32m+[m[32m    width: 250px;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  .devpic{[m
+[32m+[m[32m    height: 80px;[m
+[32m+[m[32m    width: 120px;[m
+[32m+[m[32m  }[m
+\ No newline at end of file[m
+[1mdiff --git a/HOME1/home-js.js b/HOME1/home-js.js[m
+[1mindex 125e06c..dacb3ae 100644[m
+[1m--- a/HOME1/home-js.js[m
+[1m+++ b/HOME1/home-js.js[m
+[36m@@ -1,7 +1,11 @@[m
+ // script.js[m
+ [m
+ let noteText = '';[m
+[32m+[m[32mconst user_name = document.querySelector('#uname');[m
+[32m+[m[32mconst s_username = document.querySelector("span.username");[m
+[32m+[m[32mconst user_id = document.querySelector("#uid");[m
+ document.addEventListener("DOMContentLoaded", function() {[m
+[32m+[m[32m    // alert("poknat");[m
+     const searchBar = document.querySelector(".search-bar");[m
+ [m
+     // Optional: you can implement logic to display suggestions here[m
+[36m@@ -84,6 +88,7 @@[m [mdocument.querySelectorAll('.rectangle').forEach(rectangle => {[m
+ //notes[m
+ [m
+ function openForm() {[m
+[32m+[m[32m    checkSession()[m
+     const form = document.getElementById('noteForm');[m
+     if (noteText) {[m
+         form.querySelector('textarea').value = noteText;[m
+[36m@@ -168,3 +173,14 @@[m [mfunction toggleSidebar() {[m
+     document.body.classList.toggle('active');[m
+   }[m
+   [m
+[32m+[m
+[32m+[m[32m  function checkSession() {[m
+[32m+[m[32m    if (!user_id) {[m
+[32m+[m[32m        alert('Please login first');[m
+[32m+[m[32m        window.location.href = '../LOGIN1/Login1.php';[m
+[32m+[m[32m  }};[m
+[32m+[m
+[32m+[m[41m  [m
+[32m+[m[32m  console.log(s_username);[m
+[32m+[m[32m  s_username.innerHTML = user_name.value;[m
+[32m+[m
+[1mdiff --git a/HOME1/default.php b/HOME1/default.php[m
+[1mindex e00be2d..aa57f55 100644[m
+[1m--- a/HOME1/default.php[m
+[1m+++ b/HOME1/default.php[m
+[36m@@ -2,9 +2,13 @@[m
+ session_start();  // Start the session[m
+ [m
+ if (isset($_SESSION['username'])) {[m
+[32m+

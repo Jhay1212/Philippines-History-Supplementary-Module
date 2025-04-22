@@ -1,0 +1,458 @@
+:root {
+  --primary-color: #d1aa3f;
+  --secondary-color: #ffffff;
+  --accent-color: #f0f0f0;
+  --text-color: #333333;
+  --hover-color: #45a049;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url('../PICS/bg1-login1.png');
+  background-size: cover;
+  background-position: center;
+  color: #343a40;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container {
+  max-width: 1590px;
+  margin: 0 auto; /* Center the container */
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+}
+
+.container img {
+  margin-left: 10px;
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+}
+
+header {
+  text-shadow: 2px 2px black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-image: url("../PICS/bg2-login1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 24px;
+  padding: 0px 200px 5px 2px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background-color: var(--secondary-color);
+  box-shadow: 2px 0 5px var(--card-shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding-top: 20px;
+  transition: width var(--transition-speed);
+}
+
+/* Added Media Queries for Sidebar */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-content {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 150px;
+  }
+
+  .main-content {
+    margin-left: 150px;
+    width: calc(100% - 150px);
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    display: none; /* Hide sidebar on small screens */
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.sidebar .user-info {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar .user-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--text-color);
+}
+
+.sidebar .username {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.sidebar-links a {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.sidebar-links a i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.sidebar-links a:hover,
+.sidebar-links a.active {
+  background-color: var(--text-color);
+  color: var(--secondary-color);
+}
+
+.sidebar-links a.active i {
+  color: var(--secondary-color);
+}
+
+/* Main Content Styles */
+.main-content {
+  margin-left: 250px; /* Same as sidebar width */
+  width: calc(100% - 250px);
+  height: 100vh;
+  overflow-y: auto;
+  /*background-color: var(--accent-color);*/
+}
+
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  background-image: url('../PICS/bg2-login1.jpg');
+  padding: 6px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo {
+  height: 50px;
+  margin-right: 15px;
+}
+
+.navbar .website-name {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.navbar .navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .search-bar {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  width: 200px;
+  transition: width var(--transition-speed);
+}
+
+.navbar .search-bar:focus {
+  width: 250px;
+}
+
+/* Responsive Adjustments for Navbar */
+@media (max-width: 992px) {
+  .navbar .search-bar {
+    width: 110px;
+  }
+
+  .navbar .search-bar:focus {
+    width: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .navbar .website-name {
+    font-size: 1rem;
+  }
+
+  .navbar .search-bar {
+    width: 100px;
+  }
+
+  .navbar .search-bar:focus {
+    width: 150px;
+  }
+}
+
+.navbar .info-icon {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  margin-left: 20px;
+  transition: color var(--transition-speed);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .info-icon:hover {
+  color: var(--hover-color);
+}
+
+.content-section {
+  text-align: left; /* Center align the content section */
+  margin-top: 100px; /* Adjust the top margin as needed */
+  margin-left: 20px;
+}
+
+.content-section h2 {
+  font-size: 40px; /* Adjust the font size as needed */
+  color: #333; /* Adjust the color as needed */
+  margin-left: 50px;
+}
+
+.square-container {
+  display: flex;
+  flex-direction: column; /* Align boxes vertically */
+  align-items: flex-start; /* Align boxes to the left */
+  margin-top: 40px;
+  margin-left: 20px; /* Adjust margin to align to the left */
+}
+
+.square {
+  width: 500px;
+  height: 70px;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: left; /* Align text to the left */
+  margin: 10px 30px;
+  display: flex;
+  align-items: center; /* Vertically center items */
+  transition: transform var(--transition-speed);
+}
+
+.square:hover {
+  transform: translateY(-7px); /* Move the box up slightly on hover */
+  cursor: pointer;
+}
+
+.square .content {
+  display: flex;
+  align-items: left;
+}
+
+.square img {
+  width: 40px; /* Adjust the width of the image */
+  height: 40px; /* Adjust the height of the image */
+  border-radius: 5px;
+  margin-right: 20px; /* Adjust the spacing between image and title */
+}
+
+.preview-section {
+  position: absolute;
+  right: 70px;
+  top: 150px;
+  width: 450px;
+  height: 60%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.preview-section h2 {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.preview-section #previewContent {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Sidebar styles */
+.sidebar2 {
+  height: 91.9%;
+  width: 0;
+  position: fixed;
+  top: 55px;
+  right: 0;
+  background-color: rgba(197, 197, 183, 0.50);
+  backdrop-filter: blur(10px);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 40px;
+}
+
+.sidebar2 a {
+  padding: 8px 10px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #131111;
+  display: block;
+  transition: 0.3s;
+  text-align: justify;
+}
+
+.sidebar2 a:hover {
+  color: #3f3e3e;
+}
+
+/* Icon style */
+.icon {
+  margin-left: 40px;
+  position: fixed;
+  top: 10px;
+  right: 8px;
+  font-size: 25px;
+  cursor: pointer;
+  color: #111;
+}
+
+body.active .icon {
+  color: #fff;
+}
+
+body.active .sidebar2 {
+  width: 250px;
+}
+
+.devpic {
+  height: 70px;
+  width: 70px;
+  float: left;
+  border: none;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+main {
+  padding: 20px;
+}
+
+#mainContent {
+  margin-left: 230px;
+  padding-top: 0px;
+background-image: url('../PICS/bg1-login1.png');
+  background-repeat: no-repeat;
+  background-size: 98% 110%;
+  background-attachment: fixed;
+  background-position: center bottom -30px; /* Adjusted to lower the background image */
+}
+
+/* Additional Media Queries for finer control */
+@media (max-width: 480px) {
+  .navbar .logo {
+    height: 40px; /* Adjust logo size for smaller screens */
+  }
+
+  .content-section h2 {
+    font-size: 28px; /* Adjust heading size for smaller screens */
+    margin-left: 10px; /* Reduce margin */
+  }
+
+  .square {
+    width: 90%; /* Make squares full width on small screens */
+    margin: 10px auto; /* Center the squares */
+  }
+  
+  .content-section {
+         display: flex; /* Use flexbox to arrange children side by side */
+    justify-content: space-between; /* Space between bookmarks and preview */
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    padding: 20px; /* Add some padding */
+  }
+  
+  
+.bookmarks {
+    flex: 1; /* Allow bookmarks to take remaining space */
+    min-width: 300px; /* Set a minimum width for better responsiveness */
+    margin-right: 20px; /* Space between bookmarks and preview */
+}
+
+.preview-section {
+    width: 450px; /* Fixed width for the preview section */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    margin-left: 20px; /* Add a small gap between bookmarks and preview */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .bookmarks {
+        margin-right: 0; /* Remove right margin in stacked layout */
+        margin-bottom: 10px; /* Add some margin below bookmarks for spacing */
+    }
+
+    .preview-section {
+        width: 100%; /* Make preview section full width on small screens */
+        margin-left: 0; /* Remove left margin for full width */
+        margin-top: 10px; /* Add top margin to create space from bookmarks */
+    }
+}
+
+@media (max-width: 576px) {
+    .bookmarks {
+        margin-bottom: 10px; /* Ensure enough space on very small screens */
+    }
+}
+}

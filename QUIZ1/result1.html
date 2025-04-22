@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../QUIZ1/result-css.css">
+    <title>RESULT</title>
+</head>
+
+<body>
+
+ <!-- Sidebar on the Right -->
+ <div id="sidebar" class="sidebar">
+    <!-- User Info Section -->
+    <div class="user-info">
+        <img src="../PICS/user.jpg" alt="User Icon" class="user-icon">
+        <span class="username">USERNAME</span>
+    </div>
+    <nav class="sidebar-links">
+        <a href="../HOME1/default.php"><i class="fas fa-home"></i> Home</a>
+        <a href="../BOOKMARK/bookmark1.php"><i class="fas fa-bookmark"></i> Bookmarks</a>
+        <a href="../GAMES/games.php"><i class="fas fa-gamepad"></i> Activities</a>
+        <a href="../NOTES/notes-box.php"><i class="fas fa-sticky-note"></i> Notes</a>
+        <a href="../GALLERY/gallery.php"><i class="fas fa-image"></i> Gallery</a>
+        <a href="../QUIZ1/quiz1.php"><i class="fas fa-question-circle"></i> Quiz</a>
+        <a href="../TRIVIA & FACTS/trivfac.php"><i class="fas fa-lightbulb"></i> Trivia & Facts</a>
+        <a href="../LANDING PAGE/landpage.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </nav>
+</div>
+
+<!-- Navbar Section -->
+<nav class="navbar">
+	<!-- Sidebar Toggle Button -->
+	<div class="navbar-left">
+		<span class="toggle-btn" id="openSidebar">&#9776;</span>
+
+		<!-- Website Logo and Name -->
+		<div class="navbar-logo">
+			<img src="../PICS/logo1.png" alt="Website Logo" class="logo">
+			<span class="website-name">DISCOVERING PHILIPPINE HISTORY</span>
+		</div>
+	</div>
+
+	 <!-- Search and Info Section -->
+     <div class="navbar-right">
+        <input type="text" class="search-bar" placeholder="Search...">
+    </div>
+
+<!-- Sidebar -->
+<div id="sidebar2" class="sidebar2" style="z-index: 99999;"> 
+<a href="#"><strong>About<br></strong>
+
+    This website is an online learning module about Philippine history, offering lessons, quizzes, and fun games to make learning enjoyable. Its goal is to help users understand and appreciate the rich history of the Philippines in an engaging and easy way.
+
+</a>
+<a href="#"><strong>Developers<br></strong>
+
+    <img class="devpic" src="../PICS/joan.jpg"><br>
+    Joan Hermo<br><br><br>
+
+    <img class="devpic" src="../PICS/allen.jpg"><br>
+    Allen Candelaria<br><br><br>
+
+    <img class="devpic" src="../PICS/jok3.jpg"><br>
+    Jose Rivera<br><br><br>
+
+    <img class="devpic" src="../PICS/jok2.jpg"><br>
+    Mikas Viscayno
+
+</a>
+</div>
+<!-- Sidebar Toggle Icon -->
+<div id="toggleIcon" class="icon" onclick="toggleSidebar()">
+<a href="#" class="info-icon">ℹ️</a>
+</div>
+</nav>
+	
+<!-- CONTENTS -->	
+			<main id="mainContent">
+    <section class="content-section">
+        <h2>Congratulations!</h2>
+        <div class="score">
+            <h1 class="score-text">7/10</h1>
+			
+			<p>You're a true historian in the making</p>
+        </div>
+    </section>
+</main>
+
+    <script src="../HOME1/home-js.js"></script>
+</body>
+</html>

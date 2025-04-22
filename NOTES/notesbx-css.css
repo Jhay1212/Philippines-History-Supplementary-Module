@@ -1,0 +1,322 @@
+:root {
+  --primary-color: #d1aa3f;
+  --secondary-color: #ffffff;
+  --accent-color: #f0f0f0;
+  --text-color: #333333;
+  --hover-color: #45a049;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url('../PICS/bg1-login1.png');
+  background-size: cover;
+  background-position: center;
+  color: #343a40;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background-color: var(--secondary-color);
+  box-shadow: 2px 0 5px var(--card-shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding-top: 20px;
+  transition: width var(--transition-speed);
+}
+
+.sidebar .user-info {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar .user-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--text-color);
+}
+
+.sidebar .username {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.sidebar-links a {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.sidebar-links a i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.sidebar-links a:hover,
+.sidebar-links a.active {
+  background-color: var(--text-color);
+  color: var(--secondary-color);
+}
+
+.sidebar-links a.active i {
+  color: var(--secondary-color);
+}
+
+/* Main Content Styles */
+.main-content {
+  margin-left: 250px; /* Same as sidebar width */
+  width: calc(100% - 250px);
+  height: 100vh;
+  overflow-y: auto;
+  background-color: var(--accent-color);
+}
+
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  background-image: url('../PICS/bg2-login1.jpg');
+  padding: 6px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo {
+  height: 50px;
+  margin-right: 15px;
+}
+
+.navbar .website-name {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.navbar .navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .search-bar {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  width: 200px;
+  transition: width var(--transition-speed);
+}
+
+.navbar .search-bar:focus {
+  width: 250px;
+}
+
+.navbar .info-icon {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  margin-left: 20px;
+  transition: color var(--transition-speed);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .info-icon:hover {
+  color: var(--hover-color);
+}
+
+.container {
+    max-width: 1590px;
+    margin: 0;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+}
+
+.container img{
+	margin-left:10px;
+    height:40px;
+	width:40px;
+	background-color:transparent;
+}
+
+header {
+	text-shadow: 2px 2px black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url("../PICS/bg2-login1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 24px;
+	padding: 0px 200px 5px 2px;
+}
+
+.content-section {
+    margin-left: 40px;
+    text-align: left; /* Center align the content section */
+    margin-top: 50px; /* Adjust the top margin as needed */
+}
+
+.content-section h2 {
+    font-size: 50px; /* Adjust the font size as needed */
+    color: #333; /* Adjust the color as needed */
+    margin-left: 10px;
+}
+
+.square-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.square {
+    width: 260px; /* Adjust the width of each square */
+    height: 320px; /* Adjust the height of each square */
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+	margin: 0 25px;
+}
+
+.inner-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 0px;
+    height: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adjust the position of the title */
+.square h3 {
+	font-size:22px;
+    margin-top: 300px;
+}
+
+.square:hover .inner-box {
+    transform: translateY(-5px); /* Move the box up slightly on hover */
+}
+
+/* Sidebar styles */
+.sidebar2 {
+    height: 91.9%;
+    width: 0;
+    position: fixed;
+    top: 55px;
+    right: 0;
+    background-color: rgba(197, 197, 183, 0.50);
+    backdrop-filter: blur(10px);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 40px;
+  }
+  
+  .sidebar2 a {
+    padding: 8px 10px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #131111;
+    display: block;
+    transition: 0.3s;
+    text-align: justify;
+  }
+  
+  .sidebar2 a:hover {
+    color: #3f3e3e;
+  }
+  
+  /* Icon style */
+  .icon {
+    margin-left: 40px;
+    position: fixed;
+    top: 10px;
+    right: 8px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #111;
+  }
+  
+  body.active .icon {
+    color: #fff;
+  }
+  
+  body.active .sidebar2 {
+    width: 250px;
+  }
+
+  .devpic{
+    height: 70px;
+    width: 70px;
+    float: left;
+    border: none;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  main {
+    padding: 20px;
+	
+}
+
+#mainContent {
+    margin-left: 230px;
+    padding-top: 0px;
+    background-image: url('../PICS/bg1-login1.png');
+    background-repeat: no-repeat;
+	background-size: 98% 110%;
+	background-attachment:fixed;
+	background-position: center bottom -30px; /* Adjusted to lower the background image */
+}
+.search-bar {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .navbar .website-name {
+      font-size: 1rem;
+  }
+}
+.inner-box  small {
+        position: relative;
+    top: 5rem;
+    left: -2.5rem;
+}

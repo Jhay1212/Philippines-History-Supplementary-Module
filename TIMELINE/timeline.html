@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMELINE</title>
+    <link rel="stylesheet" href="../GAMES/games-css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <style>
+        /* Timeline Container */
+        #timeline {
+            width: 80vw;
+            max-width: 100%;
+            height: 50vh;
+            margin-top: 5vh;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid #333;
+            background: linear-gradient(135deg, #e2e2e2, #f9f9f9);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            position: absolute;
+            top: 50%;
+            transform: translate(-40%, -50%);
+        }
+
+        /* Style for circles representing events */
+        circle {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        circle:hover {
+            r: 25px;
+            fill: #ff5722;
+            stroke: #fff;
+            stroke-width: 3px;
+        }
+
+        /* Tooltip styling */
+        .tooltip {
+            position: absolute;
+            text-align: center;
+            padding: 8px;
+            font: 14px 'Arial', sans-serif;
+            background: rgba(50, 50, 50, 0.8);
+            color: #fff;
+            border: 0;
+            border-radius: 8px;
+            pointer-events: none;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 768px) {
+            #timeline {
+                width: 90vw;
+                height: 40vh;
+                top: 45%;
+            }
+
+            circle {
+                r: 10px;
+            }
+
+            .tooltip {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #timeline {
+                width: 95vw;
+                height: 30vh;
+                top: 40%;
+            }
+
+            circle {
+                r: 8px;
+            }
+
+            .tooltip {
+                font-size: 10px;
+            }
+        }
+
+        /* Styling for the title text */
+        .text {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-20%, -50%);
+            color: #333;
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            background: linear-gradient(45deg, #ff5722, #2196f3);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .text.shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+   <!-- Sidebar on the Right -->
+   <div id="sidebar" class="sidebar">
+
+    <!-- User Info Section -->
+    <div class="user-info">
+        <img src="../PICS/user.jpg" alt="User Icon" class="user-icon">
+        <span class="username">USERNAME</span>
+    </div>
+
+    <a href="../HOME1/default.php"><i class="fas fa-home"></i> Home</a>
+    <a href="../BOOKMARK/bookmark1.php"><i class="fas fa-bookmark"></i> Bookmark</a>
+    <a href="../GAMES/games.php"><i class="fas fa-gamepad"></i> Games</a>
+    <a href="../NOTES/notes-box.php"><i class="fas fa-sticky-note"></i> Notes</a>
+    <a href="../GALLERY/gallery.php"><i class="fas fa-image"></i> Gallery</a>
+    <a href="../QUIZ1/quiz1.php"><i class="fas fa-question-circle"></i> Quiz</a>
+    <a href="../TRIVIA & FACTS/trivfac.php"><i class="fas fa-lightbulb"></i> Trivias & Facts</a>
+    <a href="../LANDING PAGE/landpage.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+</div>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <!-- Sidebar Toggle Button -->
+        <div class="navbar-left">
+
+            <!-- Website Logo and Name -->
+            <div class="navbar-logo">
+                <img src="../PICS/logo1.png" alt="Website Logo" class="logo">
+                <span class="website-name">DISCOVERING PHILIPPINE HISTORY</span>
+            </div>
+        </div>
+
+        <!-- Search and Info Section -->
+        <div class="navbar-right">
+            <input type="text" class="search-bar" placeholder="Search...">
+            <a href="#" class="info-icon">ℹ️</a>
+        </div>
+    </nav>
+
+    <!-- Game Selection Section -->
+    <div class="main-content">
+        
+        <div id="timeline"></div>
+<h2 class="text gradient-text">Philippine History Timeline</h2>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../HOME1/home-js.js"></script>
+
+    <script>
+    const margin = { top: 20, right: 30, bottom: 30, left: 40 };
+    const textH = document.querySelector('.text');
+
+    function resize() {
+        const width = document.getElementById("timeline").clientWidth - margin.left - margin.right;
+        const height = document.getElementById("timeline").clientHeight - margin.top - margin.bottom;
+
+        // Clear previous SVG
+        d3.select("#timeline").selectAll("*").remove();
+
+        // Create the SVG container
+        const svg = d3.select("#timeline")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        // Example dataset for the timeline
+        const data = [
+        { date: new Date(1380, 0, 1), event: "Muslim Arabs Arrived at Sulu Archipelago", image: 'static/event1.jpg' },
+{ date: new Date(1521, 0, 1), event: "Ferdinand Magellan discovers the island and names them: Archipelago of San Lazaro", image: 'static/event2.jpg' },
+{ date: new Date(1542, 0, 1), event: 'Spanish expedition claims the islands for Spain; names them "Philippines" after Prince Philip.' },
+{ date: new Date(1872, 0, 1), event: "The GomBurZa martyr fathers were executed by the Spaniards" },
+{ date: new Date(1892, 0, 1), event: "Jose Rizal founded La Liga Filipina" },
+{ date: new Date(1896, 0, 1), event: "Andres Bonifacio started the Philippine Revolution" },
+{ date: new Date(1898, 6, 12), event: "Declaration of Philippine Independence by Emilio Aguinaldo", image: 'static/event3.jpg' },
+{ date: new Date(1899, 0, 23), event: "First Philippine Republic was established in Malolos" },
+{ date: new Date(1901, 0, 1), event: "Philippine-American War began" },
+{ date: new Date(1935, 0, 1), event: "Commonwealth of the Philippines was inaugurated", image: 'static/event4.jpg' },
+{ date: new Date(1941, 0, 1), event: "Japanese forces occupied the Philippines during World War II" },
+{ date: new Date(1946, 6, 4), event: "Philippine Independence from the United States was proclaimed", image: 'static/event5.jpg' },
+{ date: new Date(1972, 8, 21), event: "Declaration of Martial Law by Ferdinand Marcos", image: 'static/event6.jpg' },
+{ date: new Date(1986, 1, 25), event: "EDSA People Power Revolution ousted Marcos and restored democracy", image: 'static/event7.jpg' },
+{ date: new Date(1992, 0, 1), event: "Fidel V. Ramos was elected as the 12th President of the Philippines" },
+{ date: new Date(2022, 0, 1), event: "Bongbong Marcos became the 17th President of the Philippines" },
+{ date: new Date(1521, 4, 27), event: "Battle of Mactan where Lapu-Lapu killed Ferdinand Magellan" },
+{ date: new Date(1872, 1, 17), event: "Cavite Mutiny, a revolt by Filipino workers and soldiers" },
+{ date: new Date(1897, 3, 10), event: "Pact of Biak-na-Bato signed, creating a truce between the Spanish and Filipino revolutionaries" },
+{ date: new Date(1898, 5, 1), event: "Battle of Manila Bay during the Spanish-American War", image: 'static/event8.jpg' },
+{ date: new Date(1934, 0, 1), event: "Tydings-McDuffie Act passed, providing for the self-government of the Philippines" },
+{ date: new Date(1941, 12, 8), event: "Japanese forces bomb Pearl Harbor, leading to the invasion of the Philippines" },
+{ date: new Date(1942, 3, 9), event: "Fall of Bataan and Death March", image: 'static/event9.jpg' },
+{ date: new Date(1944, 10, 20), event: "General MacArthur's return to the Philippines", image: 'static/event10.jpg' },
+{ date: new Date(1973, 0, 17), event: "1973 Philippine Constitution was ratified, shifting from a presidential to parliamentary government" },
+{ date: new Date(1981, 1, 17), event: "Martial Law lifted by Ferdinand Marcos" },
+{ date: new Date(1983, 7,21), event: "Benigno Aquino Jr. was assassinated at the Manila International Airport", image: 'static/event11.jpg' },
+{ date: new Date(1998, 0, 1), event: "Joseph Estrada was elected as the 13th President of the Philippines" },
+{ date: new Date(2001, 0, 20), event: "EDSA Dos ousted Joseph Estrada; Gloria Macapagal Arroyo became President", image: 'static/event12.jpg' },
+{ date: new Date(2010, 0, 1), event: "Benigno Aquino III elected as the 15th President of the Philippines" },
+{ date: new Date(2016, 0, 1), event: "Rodrigo Duterte elected as the 16th President of the Philippines" }
+
+        ];
+
+        // Create a time scale
+        const xScale = d3.scaleTime()
+    .domain([new Date(1300, 0, 1), new Date(2025, 0, 1)])  // Spread domain if needed
+    .range([0, width]);  // Keep the full width to cover the timeline
+        // Create an axis based on the scale
+        const xAxis = d3.axisBottom(xScale);
+
+        // Append the axis
+        const gX = svg.append("g")
+            .attr("transform", `translate(0,${height})`)
+            .call(xAxis);
+
+        // Add event markers (as circles)
+        svg.selectAll("circle")
+            .data(data)
+            .enter()
+            .append("circle")
+            .attr("cx", d => xScale(d.date))
+            .attr("cy", height / 2)
+            .attr("r", 20)
+            .style("fill", "steelblue");
+
+        // Tooltip for displaying event details
+        const tooltip = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
+        svg.selectAll("circle")
+            .on("mouseover", function (event, d) {
+                d3.select(this).style("fill", "green").attr("r", 50);
+                tooltip.transition().duration(200).style("opacity", 0.9);
+                tooltip.php(d.event + "<br/>" + d.date.toDateString())
+                    .style("left", (event.pageX + 5) + "px")
+                    .style("top", (event.pageY - 28) + "px");
+            })
+            .on("mouseout", function () {
+                d3.select(this).transition().duration(200)
+                    .style("fill", "steelblue")
+                    .attr("r", 20);
+                tooltip.transition().duration(500).style("opacity", 0);
+            });
+    }
+
+    // Call the resize function
+    resize();
+    
+    // Listen for window resize events and adjust the timeline
+    window.addEventListener('resize', resize);
+    </script>
+</body>
+</html>

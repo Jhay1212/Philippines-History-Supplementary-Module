@@ -1,0 +1,168 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f8f9fa, #e2dece);
+    color: #343a40;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Sidebar styles */
+.sidebar {
+    text-shadow: 2px 2px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    height: 90%;
+    width: 0; /* Sidebar hidden initially */
+    position: fixed;
+    top: 77px;
+    left: 0;
+    background-color: rgba(100, 70, 5, 0.61); /* Increase opacity for better visibility */
+    backdrop-filter: blur(10px);
+    overflow-x: hidden;
+    transition: width 0.5s ease; /* Ensure smooth transition */
+    padding-top: 20px;
+    z-index: 1000; /* Ensure it is above other elements */
+    opacity: 1; /* Ensure visibility */
+}
+
+
+.sidebar a {
+    display: flex;
+    align-items: left;  /* Vertically centers icon and text */
+    justify-content: left; /* Horizontally centers the link */
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #f8f9fa;
+    transition: 0.3s;
+    width: 100%; /* Full width for clickable area */
+}
+
+.sidebar a i {
+    margin-right: 7px; /* Space between icon and text */
+    font-size: 1.5rem; /* Icon size */
+}
+
+.sidebar a:hover {
+    transform: scale(1.05);
+}
+
+/* Close button */
+.sidebar .closebtn {
+    position: absolute;
+    left: 180px; /* Move it to the left */
+    font-size: 2rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+/* User Info Section in Sidebar */
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.user-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #ffffff;
+}
+
+.username {
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+
+/* Navbar styles */
+.navbar {
+    width: 100%;
+    background-image: url('../PICS/bg2-login1.jpg');
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Align left items (toggle button and logo/name) */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Sidebar Toggle Button */
+.toggle-btn {
+    font-size: 2rem;
+    color: rgb(2, 2, 2);
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+/* Website Logo and Name */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.website-name {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Align right side items (search bar and info icon) */
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    padding: 10px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    width: 200px;
+    transition: width 0.3s ease;
+}
+
+.search-bar:focus {
+    width: 300px;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.info-icon:hover {
+    color: #adb5bd;
+}

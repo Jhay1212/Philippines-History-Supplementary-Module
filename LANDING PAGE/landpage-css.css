@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: url('../PICS/bg-updated.png') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .welcome-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+  }
+  
+  .content {
+    max-width: 600px;
+  }
+  
+  .title {
+    background: linear-gradient(90deg, #000000, #000000);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  
+  .description {
+    font-size: 1.3rem;
+    color: #686969;
+    margin-bottom: 40px;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .button {
+    padding: 15px 40px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    color: #000000;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    border: 2px solid rgb(0, 0, 0);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .button:hover {
+    background: transparent;
+    color: #000000;
+    border-color: #ffffff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+  }
+  
+  .button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    transition: 0.4s;
+    z-index: 0;
+  }
+  
+  .button:hover::before {
+    left: 0;
+  }
+  
+  .auth-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .login-container,
+  .signup-container {
+    background: rgba(0, 0, 0, 0.7); /* Darker background for better contrast */
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      padding: 80px 80px;
+      width: 450px;
+      text-align: center;
+      animation: fadeIn 0.5s ease-out; /* Animation */
+  }
+  
+  .login-container h2,
+  .signup-container h2 {
+    margin-bottom: 25px;
+      color: #ffffff;
+      font-size: 36px;
+      letter-spacing: 1px;
+  }
+  
+  .login-container input[type="text"],
+  .login-container input[type="password"],
+  .signup-container input[type="text"],
+  .signup-container input[type="password"] {
+    width: calc(100% - 40px); /* Adjust width to accommodate eye icon */
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 18px;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.1); /* Light background for input */
+      transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .login-container input[type="text"]:focus,
+  .login-container input[type="password"]:focus {
+      background: rgba(255, 255, 255, 0.2); /* Brighter on focus */
+      outline: none;
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+  }
+  
+  .password-input {
+    position: relative;
+  }
+  
+  .password-input .eye {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      right: 30px; /* Adjust for better alignment */
+      top: 40%;
+      transform: translateY(-50%);
+      cursor: pointer;
+  }
+  
+  .login-container input[type="submit"],
+  .signup-container input[type="submit"] {
+    background: linear-gradient(to right, #0066ff, #00ccff);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .login-container input[type="submit"]:hover,
+  .signup-container input[type="submit"]:hover {
+    background: linear-gradient(to right, #00ccff, #0066ff);
+      transform: translateY(-2px); /* Slight lift effect */
+  }
+  
+  .login-container p,
+  .signup-container p {
+    color: white;
+  }
+  
+  .login-container p a,
+  .signup-container p a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .login-container p a:hover,
+  .signup-container p a:hover {
+    text-decoration: underline;
+    color: blue;
+  }
+  
+  #password-match-label {
+    display: none;
+    color: red;
+    text-shadow: 1px 1px black;
+  }
+  
+  .forgot-password-btn {
+    background: none;
+    color: white;
+    border: none;
+  }
+  
+  /* Animation Effects */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+  
+    .description {
+        font-size: 1rem;
+    }
+  
+    .button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+  
+    .container {
+        height: auto;
+        padding: 20px;
+    }
+  }
+  

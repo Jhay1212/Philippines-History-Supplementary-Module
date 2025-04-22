@@ -1,0 +1,222 @@
+[
+  {
+    "id": 0,
+    "name": "Discovery of the Philippines by Ferdinand Magellan",
+    "category": "historical",
+    "placeName": "Philippines",
+    "country": "Philippines",
+    "startDate": "1521-03",
+    "endDate": "1521-03",
+    "description": "Ferdinand Magellan arrived in the Philippines, marking the beginning of Spanish colonization.",
+    "skills": []
+  },
+  {
+    "id": 1,
+    "name": "The Katipunan is Founded",
+    "category": "historical",
+    "placeName": "Philippines",
+    "country": "Philippines",
+    "startDate": "1892-07",
+    "endDate": "1892-07",
+    "description": "Andrés Bonifacio founded the Katipunan, a secret revolutionary society aimed at gaining independence from Spanish rule.",
+    "skills": []
+  },
+  {
+    "id": 2,
+    "name": "Declaration of Philippine Independence",
+    "category": "historical",
+    "placeName": "Kawit, Cavite",
+    "country": "Philippines",
+    "startDate": "1898-06",
+    "endDate": "1898-06",
+    "description": "Emilio Aguinaldo declared the independence of the Philippines from Spain in Kawit, Cavite.",
+    "skills": []
+  },
+  {
+    "id": 3,
+    "name": "Treaty of Paris",
+    "category": "historical",
+    "placeName": "Paris, France",
+    "country": "France",
+    "startDate": "1898-12",
+    "endDate": "1898-12",
+    "description": "Spain ceded the Philippines to the United States as part of the Treaty of Paris, ending the Spanish-American War.",
+    "skills": []
+  },
+  {
+    "id": 4,
+    "name": "The First Philippine Republic",
+    "category": "historical",
+    "placeName": "Malolos, Bulacan",
+    "country": "Philippines",
+    "startDate": "1899-01",
+    "endDate": "1899-01",
+    "description": "The First Philippine Republic was inaugurated, with Emilio Aguinaldo as its president.",
+    "skills": []
+  },
+  {
+    "id": 5,
+    "name": "Philippine-American War",
+    "category": "historical",
+    "placeName": "Philippines",
+    "country": "Philippines",
+    "startDate": "1899-02",
+    "endDate": "1902-07",
+    "description": "The war between Filipino revolutionaries and the United States, following the U.S. annexation of the Philippines.",
+    "skills": []
+  },
+  {
+    "id": 6,
+    "name": "Tydings–McDuffie Act",
+    "category": "historical",
+    "placeName": "United States",
+    "country": "United States",
+    "startDate": "1934-03",
+    "endDate": "1934-03",
+    "description": "The Tydings–McDuffie Act was signed, setting the Philippines on a path to independence after a ten-year transition period.",
+    "skills": []
+  },
+  {
+    "id": 7,
+    "name": "Japanese Occupation of the Philippines",
+    "category": "historical",
+    "placeName": "Philippines",
+    "country": "Philippines",
+    "startDate": "1941-12",
+    "endDate": "1945-09",
+    "description": "The Japanese occupied the Philippines during World War II, leading to widespread resistance and suffering.",
+    "skills": []
+  },
+  {
+    "id": 8,
+    "name": "Philippine Independence from the U.S.",
+    "category": "historical",
+    "placeName": "Manila",
+    "country": "Philippines",
+    "startDate": "1946-07",
+    "endDate": "1946-07",
+    "description": "The Philippines officially gained independence from the United States, ending nearly 50 years of colonial rule.",
+    "skills": []
+  },
+  {
+    "id": 9,
+    "name": "Declaration of Martial Law",
+    "category": "historical",
+    "placeName": "Philippines",
+    "country": "Philippines",
+    "startDate": "1972-09",
+    "endDate": "1981-01",
+    "description": "President Ferdinand Marcos Sr. declared Martial Law, which lasted until 1981, marking a period of authoritarian rule.",
+    "skills": []
+  },
+  {
+    "id": 10,
+    "name": "Assassination of Benigno Aquino Jr.",
+    "category": "historical",
+    "placeName": "Manila",
+    "country": "Philippines",
+    "startDate": "1983-08",
+    "endDate": "1983-08",
+    "description": "The assassination of opposition leader Benigno Aquino Jr. on his return to the Philippines sparked widespread protests against Marcos.",
+    "skills": []
+  },
+  {
+    "id": 11,
+    "name": "People Power Revolution",
+    "category": "historical",
+    "placeName": "Philippines",
+    "country": "Philippines",
+    "startDate": "1986-02",
+    "endDate": "1986-02",
+    "description": "A peaceful revolution that led to the ousting of President Ferdinand Marcos Sr. and the restoration of democracy in the Philippines.",
+    "skills": []
+  },
+  {
+    "id": 12,
+    "name": "Ratification of the 1987 Constitution",
+    "category": "historical",
+    "placeName": "Philippines",
+    "country": "Philippines",
+    "startDate": "1987-02",
+    "endDate": "1987-02",
+    "description": "A new constitution was ratified, establishing the democratic framework of the current Philippine government.",
+    "skills": []
+  },
+  {
+    "id": 13,
+    "name": "Mount Pinatubo Eruption",
+    "category": "disaster",
+    "placeName": "Mount Pinatubo",
+    "country": "Philippines",
+    "startDate": "1991-06",
+    "endDate": "1991-06",
+    "description": "The eruption of Mount Pinatubo caused massive destruction, displacing thousands and impacting global weather patterns.",
+    "skills": []
+  },
+  {
+    "id": 14,
+    "name": "Second EDSA Revolution",
+    "category": "historical",
+    "placeName": "Philippines",
+    "country": "Philippines",
+    "startDate": "2001-01",
+    "endDate": "2001-01",
+    "description": "The Second People Power Revolution led to the resignation of President Joseph Estrada and the assumption of power by Gloria Macapagal Arroyo.",
+    "skills": []
+  },
+  {
+    "id": 15,
+    "name": "Typhoon Haiyan (Yolanda)",
+    "category": "disaster",
+    "placeName": "Central Philippines",
+    "country": "Philippines",
+    "startDate": "2001-11",
+    "endDate": "2013-11",
+    "description": "Typhoon Haiyan, one of the strongest tropical cyclones ever recorded, devastated the central Philippines, killing thousands and leaving millions homeless.",
+    "skills": []
+  },
+  {
+    "id": 16,
+    "name": "Marawi Siege",
+    "category": "historical",
+    "placeName": "Marawi",
+    "country": "Philippines",
+    "startDate": "2017-05",
+    "endDate": "2017-10",
+    "description": "The battle between government forces and Islamist militants in Marawi led to the destruction of much of the city and the displacement of thousands.",
+    "skills": []
+  },
+  {
+    "id": 17,
+    "name": "COVID-19 Pandemic in the Philippines",
+    "category": "health",
+    "placeName": "Philippines",
+    "country": "Philippines",
+    "startDate": "2020-03",
+    "endDate": "Ongoing",
+    "description": "The COVID-19 pandemic severely impacted the Philippines, resulting in widespread lockdowns, economic downturn, and healthcare challenges.",
+    "skills": []
+  },
+  {
+    "id": 18,
+    "name": "Ferdinand Marcos Sr. Jr. Elected President",
+    "category": "political",
+    "placeName": "Philippines",
+    "country": "Philippines",
+    "startDate": "2022-05",
+    "endDate": "2022-05",
+    "description": "Ferdinand Marcos Sr. Jr. was elected as the 17th president of the Philippines, marking the return of the Marcos family to the highest political office.",
+    "skills": []
+  },
+  {
+    "id": 19,
+    "name": "End of COVID-19 Emergency",
+    "category": "health",
+    "placeName": "Philippines",
+    "country": "Philippines",
+    "startDate": "2023-07",
+    "endDate": "2023-07",
+    "description": "On July 21, President Ferdinand Marcos Sr. Jr. declared the end of the COVID-19 emergency in the Philippines.",
+    "skills": []
+  }
+]

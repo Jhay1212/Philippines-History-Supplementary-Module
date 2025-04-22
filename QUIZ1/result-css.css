@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	font-family: "Times New Roman", Times, serif;
+	/*border: red 2px solid;*/
+}
+
+body {
+	font-family: Arial, sans-serif;
+    margin: 10px;
+    padding: 0;
+    background-image: url("../PICS/result-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.container {
+    max-width: 1590px;
+    margin: 0;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+}
+
+.container img{
+	margin-left:10px;
+    height:40px;
+	width:40px;
+	background-color:transparent;
+}
+
+header {
+	text-shadow: 2px 2px black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url("../PICS/bg2-login1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 24px;
+	padding: 0px 200px 5px 2px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly more opaque */
+    backdrop-filter: blur(10px);
+    overflow-x: hidden;
+    transition: width 0.5s ease;
+    padding-top: 20px;
+    z-index: 1000;
+  }
+  
+  .sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #080808;
+    transition: 0.3s;
+    width: 100%;
+  }
+  
+  .sidebar a i {
+    margin-right: 7px;
+    font-size: 1.5rem;
+  }
+  
+  .sidebar a:hover {
+    transform: translateX(5px);
+    background-color: #adb5bd;
+  }
+  
+  /* User Info Section in Sidebar */
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+  }
+  
+  .user-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #ffffff;
+  }
+  
+  .username {
+    font-size: 1.2rem;
+    color: #0a0303;
+    font-weight: 600;
+  }
+
+.content-section {
+    text-align: center; /* Center align the content section */
+    margin-top: 200px; /* Adjust the top margin as needed */
+}
+
+.content-section h2 {
+    font-size: 80px; /* Adjust the font size as needed */
+    color: #333; /* Adjust the color as needed */
+}
+
+.content-section p {
+    font-size: 34px; /* Adjust the font size of the paragraph */
+    margin-top: 20px; /* Add margin to create visual separation */
+    color: #333; /* Adjust the color of the paragraph */
+}
+
+.score {
+    font-size: 100px; /* Adjust the font size of the score */
+    color: #333; /* Adjust the color of the score */
+    margin-top: 30px; /* Adjust the top margin as needed */
+}
+
+
+.score-text {
+    font-size: inherit; /* Inherit the font size from the parent (.score) */
+    color: inherit; /* Inherit the color from the parent (.score) */
+    margin: 0; /* Remove any default margins */
+}
+
+/* Sidebar styles */
+.sidebar2 {
+  height: 91.9%;
+  width: 0;
+  position: fixed;
+  top: 55px;
+  right: 0;
+  background-color: rgba(197, 197, 183, 0.50);
+  backdrop-filter: blur(10px);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 40px;
+}
+
+.sidebar2 a {
+  padding: 8px 10px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #131111;
+  display: block;
+  transition: 0.3s;
+  text-align: justify;
+}
+
+.sidebar2 a:hover {
+  color: #3f3e3e;
+}
+
+/* Icon style */
+.icon {
+  margin-left: 40px;
+  position: fixed;
+  top: 10px;
+  right: 8px;
+  font-size: 25px;
+  cursor: pointer;
+  color: #111;
+}
+
+body.active .icon {
+  color: #fff;
+}
+
+body.active .sidebar2 {
+  width: 250px;
+}
+
+.devpic{
+  height: 70px;
+  width: 70px;
+  float: left;
+  border: none;
+  border-radius: 50%;
+  margin-right: 10px;
+}

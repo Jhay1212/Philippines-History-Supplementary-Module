@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME 1: WHO AM I?</title>
+    <link rel="stylesheet" href="../GAMES/game1-css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="user-info">
+            <img src="../PICS/user.jpg" alt="User Icon" class="user-icon">
+            <span class="username">USERNAME</span>
+        </div>
+        <nav class="sidebar-links">
+            <a href="../HOME1/default.php"><i class="fas fa-home"></i> Home</a>
+            <a href="../BOOKMARK/bookmark1.php"><i class="fas fa-bookmark"></i> Bookmarks</a>
+            <a href="../GAMES/games.php" class="active"><i class="fas fa-gamepad"></i> Activities</a>
+            <a href="../NOTES/notes-box.php"><i class="fas fa-sticky-note"></i> Notes</a>
+            <a href="../GALLERY/gallery.php"><i class="fas fa-image"></i> Gallery</a>
+            <a href="../QUIZ1/quiz1.php"><i class="fas fa-question-circle"></i> Quiz</a>
+            <a href="../TRIVIA & FACTS/trivfac.php"><i class="fas fa-lightbulb"></i> Trivia & Facts</a>
+            <a href="../LANDING PAGE/landpage.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </nav>
+    </aside>
+
+     <!-- Navbar -->
+     <header class="navbar">
+        <div class="navbar-left">
+            <div class="navbar-logo">
+                <img src="../PICS/logo1.png" alt="Website Logo" class="logo">
+                <span class="website-name">DISCOVERING PHILIPPINE HISTORY</span>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <input type="text" class="search-bar" placeholder="Search lessons...">
+            <div id="toggleIcon" class="icon" onclick="toggleSidebar()">
+            <a href="#" class="info-icon"><i class="fas fa-info-circle"></i></a>
+        </div>
+        </div>
+    </header>
+
+    <!-- Game Section -->
+    <div class="game-container">
+
+<!-- Sidebar -->
+<div id="sidebar2" class="sidebar2" style="z-index: 99999;"> 
+<a href="#"><strong>About<br></strong>
+
+    This website is an online learning module about Philippine history, offering lessons, quizzes, and fun games to make learning enjoyable. Its goal is to help users understand and appreciate the rich history of the Philippines in an engaging and easy way.
+
+</a>
+<a href="#"><strong>Developers<br></strong>
+
+    <img class="devpic" src="../PICS/joan.jpg"><br>
+    Joan Hermo<br><br><br>
+
+    <img class="devpic" src="../PICS/allen.jpg"><br>
+    Allen Candelaria<br><br><br>
+
+    <img class="devpic" src="../PICS/jok3.jpg"><br>
+    Jose Rivera<br><br><br>
+
+    <img class="devpic" src="../PICS/jok2.jpg"><br>
+    Mikas Viscayno
+
+</a>
+</div>
+
+  <!-- Question Progress Indicator -->
+  <div id="question-indicator" class="question-indicator">Question 1 of 15</div>
+  <div class="score-indicator">Score: <span id="score">0</span></div> <!-- New Score Indicator -->
+
+        <div class="image-container animated-element">
+            <img id="person-image" src="../PICS/GAMES PICS/game1 pics/1.png" alt="Person Image">
+        </div>
+
+        <!-- Hint -->
+        <div class="hint-text animated-element">
+            <p id="hint">Hint: I am known as the "Father of the Philippine Revolution" and I founded the Katipunan, the secret society that launched the revolution against Spain.
+            </p>
+        </div>
+
+        <!-- Options -->
+        <div class="options-container animated-element">
+            <button class="option-btn" onclick="checkAnswer(0)">Albert Einstein</button>
+            <button class="option-btn" onclick="checkAnswer(1)">Isaac Newton</button>
+            <button class="option-btn" onclick="checkAnswer(2)">Nikola Tesla</button>
+            <button class="option-btn" onclick="checkAnswer(3)">Marie Curie</button>
+        </div>
+
+        <!-- Feedback Text -->
+        <div class="feedback" id="feedback"></div>
+
+        <!-- Next Button -->
+        <button id="next-btn" onclick="nextQuestion()" class="next-btn">Next</button>
+
+        <!-- Exit Button -->
+        <button id="exit-btn" onclick="exitGame()" class="exit-btn">Exit</button>
+    </div>
+
+    <!-- When game ends, show the congratulatory message -->
+<div class="congrats-message" id="congrats-message">
+    <h2>You've completed the game! 🎉</h2>
+    <p>Great job guessing all the answers!</p>
+    <button id="exit-btn" onclick="exitGame()" class="exit-btn">Exit</button>
+</div>
+
+ <!-- Audio element -->
+ <audio id="sound" src="../GAMES/GAMES MUSIC/BgGame2.mp3"></audio>
+
+ <!-- Button for sound control -->
+ <button id="soundButton">🔊</button>
+
+    <!-- JavaScript -->
+    <script src="../GAMES/game1-js.js"></script>
+    <script src="../HOME1/home-js.js"></script>
+</body>
+</html>
