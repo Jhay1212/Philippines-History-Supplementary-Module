@@ -2,6 +2,12 @@
 
 A comprehensive and interactive online module for students to learn about the history of the Philippines.
 
+## INSTALLATION
+Create a database named kasaysayan
+The php db_connection.php will handle the connection as long the database name is correct 
+
+If your using XAMPP you can import the table for ease of use
+
 ## Features
 
 * A timeline of major events in Philippine history from the pre-colonial period to the present day
@@ -35,8 +41,12 @@ A comprehensive and interactive online module for students to learn about the hi
 * If you're a student, you can use the module and provide feedback to help us improve it
 * If you're a teacher, you can use the module as a resource for your students
 * If you're a historian or expert in Philippine history, you can contribute to the module by providing additional resources or feedback
+* And if you are a programmer feel free to extend and use this freely.
 
 ## Who made this module?
 
-* The module was created by a team of college students, including [list the names of the students who worked on the module]
+* The module was created by a team of college students, including 
+* Jose Alfonso Rivera - Main Programmer
+* Allen Candelaria - Frontend Programmer
+* Mikas Viscayno - QA Tester
 * We worked together to design and develop the module, and we hope you find it useful!
